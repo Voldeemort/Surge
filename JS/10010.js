@@ -1,4 +1,4 @@
-const tel = "13277703313";
+const tel = "13299208991";
 
 //上行引号内填入联通号码，使用前请登陆一次联通支付宝小程序
 //有问题请通过Telegram反馈 https://t.me/Leped_Bot
