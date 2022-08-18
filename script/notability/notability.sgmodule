@@ -1,3 +1,5 @@
+#!name=notabilityplus
+#!desc=解锁notability
 [Script]
 Notability VIP = type=http-response,pattern=https:\/\/notability\.com\/subscriptions,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Voldeemort/Surge/main/script/notability/natability.js,script-update-interval=0
 [MITM]
