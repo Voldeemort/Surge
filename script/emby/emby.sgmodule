@@ -1,0 +1,6 @@
+#!name=emby
+#!desc=emby
+[Script]
+Notability VIP = type=http-response,pattern=https:\/\/notability\.com\/subscriptions,requires-body=1,max-size=0,script-path=https://github.com/Voldeemort/Surge/blob/main/script/emby/emby.js,script-update-interval=0
+[MITM]
+hostname = %APPEND% mb3admin.com
