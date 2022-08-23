@@ -101,9 +101,9 @@ panel_result['content'] = content
     await inner_check()
       .then((code) => {
         if (code === 'Not Available') {
-          youtube_check_result += '\u2612 |'
+          youtube_check_result += '\u2612 | '
         } else {
-          youtube_check_result += "\u2611"+code.toUpperCase()+' |'
+          youtube_check_result += "\u2611"+code.toUpperCase()+' | '
         }
       })
       .catch((error) => {
@@ -159,7 +159,7 @@ panel_result['content'] = content
         if (code === 'Not Found') {
           return inner_check(80018499)
         }
-        netflix_check_result += '\u2611'+code.toUpperCase()+' |'
+        netflix_check_result += '\u2611'+code.toUpperCase()+' | '
         return Promise.reject('BreakSignal')
       })
       .then((code) => {
