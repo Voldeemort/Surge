@@ -175,7 +175,7 @@ panel_result['content'] = content
           return
         }
         if (error === 'Not Available') {
-          netflix_check_result += '\u2612'
+          netflix_check_result += '\u2612 | '
           return
         }
         netflix_check_result += 'N/A'
