@@ -107,7 +107,7 @@ panel_result['content'] = content
         }
       })
       .catch((error) => {
-        youtube_check_result += 'N/A'
+        youtube_check_result += 'N/A | '
       })
   
     return youtube_check_result
@@ -178,7 +178,7 @@ panel_result['content'] = content
           netflix_check_result += '\u2612 | '
           return
         }
-        netflix_check_result += 'N/A'
+        netflix_check_result += 'N/A | '
       })
   
     return netflix_check_result
