@@ -107,7 +107,7 @@ async function check_youtube_premium() {
       }
     })
     .catch((error) => {
-      youtube_check_result += 'N/A'
+      youtube_check_result += 'N/A |'
     })
 
   return youtube_check_result
