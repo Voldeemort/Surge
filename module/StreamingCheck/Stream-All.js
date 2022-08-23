@@ -175,10 +175,10 @@ async function check_netflix() {
         return
       }
       if (error === 'Not Available') {
-        netflix_check_result += '\u2612'
+        netflix_check_result += '\u2612 |'
         return
       }
-      netflix_check_result += 'N/A'
+      netflix_check_result += 'N/A |'
     })
 
   return netflix_check_result
