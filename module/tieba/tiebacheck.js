@@ -1,4 +1,6 @@
 /*
+https://github.com/blackmatrix7/ios_rule_script
+
 百度贴吧签到，增加重试机制，减少签到失败的情况。
 脚本为串行执行，通过设定batchSize的值<int>，实现每批多少个贴吧并行签到一次。
 */
