@@ -6,8 +6,8 @@ https://github.com/blackmatrix7/ios_rule_script
 */
 const scirptName = "百度贴吧";
 const batchSize = 20;
-const retries = 5; // 签到失败重试次数
-const interval = 2000; // 每次重试间隔
+const retries = 10; // 签到失败重试次数
+const interval = 5000; // 每次重试间隔
 const tiebaCookieKey = "tieba_checkin_cookie";
 const tiebeGetCookieRegex = /https?:\/\/(tiebac\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login/;
 const tiebeNewVersionGetCookieRegex = /^https?:\/\/tiebac\.baidu\.com\/c\/s\/channelIconConfig/;
