@@ -119,18 +119,18 @@ function TiebaCheckIn(cookie, tbs, tieba) {
     let hisCookie = magicJS.read(tiebaCookieKey);
     magicJS.logDebug(`当前贴吧Cookie：\n${cookie}\n历史贴吧Cookie：\n${hisCookie}`);
     if (!!cookie && cookie === hisCookie) {
-      magicJS.logInfo(`贴吧Cookie没有变化，无需更新。`);
+      magicJS.logInfo(`贴吧Cookie没有变化，无需更新`);
     } else if (!!cookie && cookie !== hisCookie) {
       magicJS.write(tiebaCookieKey, cookie);
-      magicJS.notify(`🎈获取贴吧Cookie成功！！`);
+      magicJS.notify(`🟣获取贴吧Cookie成功`);
     } else {
-      magicJS.notify(`❌获取贴吧Cookie出现异常！！`);
+      magicJS.notify(`🔴获取贴吧Cookie出错`);
     }
   } else {
     let cookie = magicJS.read(tiebaCookieKey);
-    let content = "🥺很遗憾，以下贴吧签到失败：";
+    let content = "🔵很遗憾，以下贴吧签到失败：";
     if (!!cookie === false) {
-      magicJS.notify("❓请先获取有效的贴吧Cookie！！");
+      magicJS.notify("🟡请先获取有效的贴吧Cookie");
     } else {
       let [tbs, tiebaList] = await magicJS.retry(GetTieBaList, retries, interval)(cookie);
       let tiebaCount = tiebaList.length;
@@ -153,7 +153,7 @@ function TiebaCheckIn(cookie, tbs, tieba) {
           });
         });
       }
-      magicJS.notify(scirptName, `签到${tiebaCount}个，成功${success}个，失败${failed}个`, !!failed > 0 ? content : "🎉恭喜，所有贴吧签到成功！！");
+      magicJS.notify(scirptName, `签到${tiebaCount}个，成功${success}个，失败${failed}个`, !!failed > 0 ? content : "🟢恭喜，所有贴吧签到成功");
     }
   }
   magicJS.done();
