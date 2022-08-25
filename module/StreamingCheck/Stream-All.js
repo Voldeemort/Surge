@@ -28,8 +28,8 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
   let panel_result = {
     title: `${args.title} | ${hour}:${minutes}` || `流媒体解锁查询 | ${hour}:${minutes}`,
     content: '',
-    icon: args.icon || "play.circle",
-    "icon-color": args.color || "#007aff",
+    icon: args.icon || "aqi.medium",
+    "icon-color": args.color || "#FF2D55",
   }
   let [{ region, status }] = await Promise.all([testDisneyPlus()])
   await Promise.all([check_youtube_premium(), check_netflix()])
