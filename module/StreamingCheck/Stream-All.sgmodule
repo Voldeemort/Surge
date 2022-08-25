@@ -3,8 +3,8 @@
 
 [Panel]
 # 流媒体解锁检测
-stream-all = script-name=stream-all, title="流媒体解锁检测", content="请刷新面板", update-interval=3600
+策略面板 = script-name=解锁检测,update-interval=3600
 
 [Script]
 # 流媒体解锁检测
-stream-all = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/Voldeemort/Surge/main/module/StreamingCheck/Stream-All.js
+解锁检测 = type=generic,timeout=30,script-path=https://raw.githubusercontent.com/Voldeemort/Surge/main/module/StreamingCheck/Stream-All.js,script-update-interval=0,argument=title=流媒体解锁检测&icon=aqi.medium&color=#FF2D55
