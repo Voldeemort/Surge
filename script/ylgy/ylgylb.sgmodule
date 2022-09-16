@@ -1,0 +1,6 @@
+#!name=羊了个羊
+#!desc=羊了个羊修改排行榜，不需要刷
+[Script]
+ylgylb = type=http-response,pattern=^https?:\/\/cat-match\.easygame2021\.com\/sheep\/v1\/game\/personal_info,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Voldeemort/Surge/main/script/ylgy/ylgylb.js,script-update-interval=0
+[MITM]
+hostname = %APPEND%  *.easygame2021.com
