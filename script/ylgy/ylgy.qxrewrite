@@ -1,0 +1,5 @@
+# 羊了个羊修改排行全皮肤
+
+^https?:\/\/cat-match\.easygame2021\.com\/sheep\/v1\/game\/personal_info url script-script-response-body https://raw.githubusercontent.com/Voldeemort/Surge/main/script/ylgy/ylgylb.js
+^https?:\/\/cat-match-static\.easygame2021\.com\/catMatch\/sheep_wx_1_1_8\/remote\/resources\/import\/90\/9020bbe7-5f82-4103-8834-0e5480b8745c.* script-response-body https://raw.githubusercontent.com/Voldeemort/Surge/main/script/ylgy/ylgyskin.js
+hostname = *.easygame2021.com
