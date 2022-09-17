@@ -2,6 +2,6 @@
 #!desc=羊了个羊修改排行榜，全皮肤
 [Script]
 ylgylb = type=http-response,pattern=^https?:\/\/cat-match\.easygame2021\.com\/sheep\/v1\/game\/personal_info,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Voldeemort/Surge/main/script/ylgy/ylgylb.js,script-update-interval=0
-ylgyskin = type=http-response,pattern= ^https?:\/\/cat-match-static\.easygame2021\.com\/catMatch\/sheep_wx_1_1_8\/remote\/resources\/import\/90\/9020bbe7-5f82-4103-8834-0e5480b8745c\..*\.json,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Voldeemort/Surge/main/script/ylgy/ylgyskin.js
+ylgyskin = type=http-response,pattern= ^https?:\/\/cat-match-static\.easygame2021\.com\/catMatch\/sheep_wx_1_1_8\/remote\/resources\/import\/90\/9020bbe7-5f82-4103-8834-0e5480b8745c\..+\.json,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Voldeemort/Surge/main/script/ylgy/ylgyskin.js
 [MITM]
 hostname = %APPEND%  *.easygame2021.com
