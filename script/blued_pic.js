@@ -12,19 +12,22 @@ hostname = burn-chatfiles.bldimg.com
 const notificationTitle = "成功捕获密照";
 const notificationBody = "点击查看";
 const notificationURL = $request.url;
+const userAgent = $request.headers["User-Agent"] || $request.headers["user-agent"];
 
-// 读取已通知的URL列表
-const storedURLs = $persistentStore.read("notifiedURLs") ? JSON.parse($persistentStore.read("notifiedURLs")) : [];
+if (userAgent && (userAgent.indexOf("Blued") !== -1 || userAgent.indexOf("blued") !== -1)) {
+    try {
+        const storedURLs = $persistentStore.read("notifiedURLs") ? JSON.parse($persistentStore.read("notifiedURLs")) : [];
 
-// 检查是否已通知过该URL
-if (!storedURLs.includes(notificationURL)) {
-    // 发送通知，并设置点击通知后打开的URL
-    $notification.post(notificationTitle, notificationBody, { "open-url": notificationURL });
+        if (!storedURLs.includes(notificationURL)) {
+            $notification.post(notificationTitle, notificationBody, notificationURL, { "open-url": notificationURL });
 
-    // 将该URL添加到已通知列表中
-    storedURLs.push(notificationURL);
-    $persistentStore.write(JSON.stringify(storedURLs), "notifiedURLs");
+            storedURLs.push(notificationURL);
+            $persistentStore.write(JSON.stringify(storedURLs), "notifiedURLs");
+        }
+    } catch (error) {
+        console.log("Error:", error.message);
+        $notification.post("代码执行出错", "", error.message);
+    }
 }
 
-// 完成脚本执行
 $done({});
