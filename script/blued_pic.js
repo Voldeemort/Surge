@@ -16,7 +16,10 @@ const notificationURL = $request.url;
 const storedURLs = $persistentStore.read("notifiedURLs") ? JSON.parse($persistentStore.read("notifiedURLs")) : [];
 
 if (!storedURLs.includes(notificationURL)) {
-    $notification.post(notificationTitle, notificationBody, notificationURL);
+    // 发送通知，并设置点击通知后打开的 URL
+    $notification.post(notificationTitle, notificationBody, "", { "open-url": notificationURL });
+    
+    // 将该 URL 添加到已通知列表中
     storedURLs.push(notificationURL);
     $persistentStore.write(JSON.stringify(storedURLs), "notifiedURLs");
 }
