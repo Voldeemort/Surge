@@ -9,24 +9,16 @@
 hostname = burn-chatfiles.bldimg.com
 */
 
-const url = $request.url;
-const headers = $request.headers;
+const notificationTitle = "成功捕获密照";
+const notificationBody = "点击查看";
+const notificationURL = $request.url;
 
-if (headers["User-Agent"] && (headers["User-Agent"].indexOf("Blued") !== -1 || headers["User-Agent"].indexOf("blued") !== -1)) {
-    try {
-        const storedUrl = $persistentStore.read("pngUrl");
+const storedURLs = $persistentStore.read("notifiedURLs") ? JSON.parse($persistentStore.read("notifiedURLs")) : [];
 
-        if (!storedUrl || storedUrl !== url) {
-            $persistentStore.write(url, "pngUrl");
-            $notification.post("成功捕获密照", "点击此通知查看PNG", "", {
-                "open-url": url,
-                "media-url": url
-            });
-        }
-    } catch (error) {
-        console.log("Error:", error.message);
-        $notification.post("代码执行出错", "", error.message);
-    }
+if (!storedURLs.includes(notificationURL)) {
+    $notification.post(notificationTitle, notificationBody, notificationURL);
+    storedURLs.push(notificationURL);
+    $persistentStore.write(JSON.stringify(storedURLs), "notifiedURLs");
 }
 
 $done({});
