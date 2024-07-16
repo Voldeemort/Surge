@@ -19,7 +19,7 @@ const storedURLs = $persistentStore.read("notifiedURLs") ? JSON.parse($persisten
 // 检查是否已通知过该URL
 if (!storedURLs.includes(notificationURL)) {
     // 发送通知，并设置点击通知后打开的URL
-    $notification.post(notificationTitle, notificationBody, notificationURL, { "open-url": notificationURL });
+    $notification.post(notificationTitle, notificationBody, { "open-url": notificationURL });
 
     // 将该URL添加到已通知列表中
     storedURLs.push(notificationURL);
