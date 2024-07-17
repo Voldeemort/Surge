@@ -35,15 +35,15 @@ function saveStoredURLs(urls) {
 
 function sendNotification(title, body, url) {
     const options = {
-        "media-url": url,
         "open-url": url,
-        "url": url, // 兼容不同平台
-        "action": "open-url"
+        "media-url": url
     };
 
     if (typeof $notification !== "undefined") {
         $notification.post(title, body, "", options);
     } else if (typeof $notify !== "undefined") {
         $notify(title, body, "", options);
+    } else {
+        console.log("Notification API is not available.");
     }
 }
