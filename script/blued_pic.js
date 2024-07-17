@@ -7,7 +7,12 @@ if (headers["user-agent"] && headers["user-agent"].indexOf("Blued") !== -1) {
         const notify = $.getdata("pngUrl");
         if (!notify || notify !== url) {
             $.setdata(url, "pngUrl");
-            $.msg("Eric已成功捕获baby密照", "点击此通知查看PNG", "", { 'open-url': url, 'media-url': url });
+
+            const notificationTitle = "Eric已成功捕获baby密照";
+            const notificationBody = "点击此通知查看PNG";
+            const options = { 'open-url': url, 'media-url': url };
+
+            $.msg(notificationTitle, notificationBody, "", options);
         }
     } catch (e) {
         $.logErr(e);
