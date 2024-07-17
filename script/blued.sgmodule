@@ -1,0 +1,8 @@
+#!name=blued
+#!desc=blued
+
+[MITM]
+hostname =  %APPEND% social.blued.cn,argo.blued.cn,*.bldimg.com,-blued.irisdt.cn,-120.53.131.149,-live-im.blued.cn,-h*.blued.cn
+
+[Script]
+闪照 = type=http-request,pattern=^https:\/\/(burn-chatfiles)\.bldimg\.com\/(ingfiles|burn_chatfiles\/(videos|users))\/.*(mp4|jpg|(jpg|png)).*,script-path=https://raw.githubusercontent.com/Voldeemort/Surge/main/script/blued_pic.js,requires-body=0,max-size=0,debug=0
