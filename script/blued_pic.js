@@ -10,7 +10,10 @@ if (headers["user-agent"] && headers["user-agent"].indexOf("Blued") !== -1) {
 
             const notificationTitle = "Eric已成功捕获baby密照";
             const notificationBody = "点击此通知查看PNG";
-            const options = { 'open-url': url, 'media-url': url };
+            const options = {
+                "media-url": url,
+                "open-url": url
+            };
 
             $.msg(notificationTitle, notificationBody, "", options);
         }
