@@ -15,7 +15,19 @@ if (headers["user-agent"] && headers["user-agent"].indexOf("Blued") !== -1) {
                 "open-url": url
             };
 
-            $.msg(notificationTitle, notificationBody, "", options);
+            // Surge supports "action" and "url" for open-url actions
+            const surgeOptions = {
+                "media-url": url,
+                "action": "open-url",
+                "url": url
+            };
+
+            // 使用特定于 Surge 的选项
+            if ($.isSurge()) {
+                $notification.post(notificationTitle, notificationBody, "", surgeOptions);
+            } else {
+                $.msg(notificationTitle, notificationBody, "", options);
+            }
         }
     } catch (e) {
         $.logErr(e);
